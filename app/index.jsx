@@ -1,10 +1,13 @@
-import { StyleSheet, Text , View , Image} from "react-native";
+import { StyleSheet, Text , View , Image, useColorScheme} from "react-native";
 import Logo from '../assets/img/logo_light.png';
 import { Link } from "expo-router";
+import { Colors } from "../constants/Colors";
 
 const Home = () => {
+  const colorScheme = useColorScheme();
+  const theme = Colors[colorScheme] ?? Colors.light;
   return (
-    <View style = {styles.container}>
+    <View style = {[styles.container, {backgroundColor : theme.background }]}>
         <Image source={Logo} style={styles.img}></Image>
       <Text style = {styles.title}>The number 1</Text>
       <Text style = {{marginTop : 10, marginBottom: 30}}>Reading List App</Text>
