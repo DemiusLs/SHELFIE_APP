@@ -2,13 +2,16 @@ import { StyleSheet, Text , View , Image, useColorScheme} from "react-native";
 import Logo from '../assets/img/logo_light.png';
 import { Link } from "expo-router";
 import { Colors } from "../constants/Colors";
+//themed components
+import ThemedView from "../components/ThemedView";
+import ThemedLogo from "../components/ThemedLogo";
 
 const Home = () => {
   const colorScheme = useColorScheme();
   const theme = Colors[colorScheme] ?? Colors.light;
   return (
-    <View style = {[styles.container, {backgroundColor : theme.background }]}>
-        <Image source={Logo} style={styles.img}></Image>
+    <ThemedView style = {styles.container}>
+        <ThemedLogo style={styles.card}/>
       <Text style = {styles.title}>The number 1</Text>
       <Text style = {{marginTop : 10, marginBottom: 30}}>Reading List App</Text>
 
@@ -18,7 +21,7 @@ const Home = () => {
       <View style={styles.card}>
         <Link style={styles.link} href="/contact">Contact Page</Link>
       </View>
-    </View>
+    </ThemedView>
 
     
   );
@@ -29,7 +32,6 @@ export default Home;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#b21c1c',
         alignItems: 'center',
         justifyContent: 'center',
     },
