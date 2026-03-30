@@ -3,7 +3,7 @@ import DarkLogo from "../assets/img/logo_dark.png"
 import LightLogo from "../assets/img/logo_light.png"
 
 
-const ThemedView = ({...props}) => {
+const ThemedLogo = ({...props}) => {
     const colorScheme = useColorScheme();
     const logo = colorScheme === "dark" ? DarkLogo : LightLogo;
     return(
@@ -11,4 +11,4 @@ const ThemedView = ({...props}) => {
 
     )
 }
-export default ThemedView;
+export default ThemedLogo;

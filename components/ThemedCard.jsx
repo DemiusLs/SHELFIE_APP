@@ -1,12 +1,12 @@
 import { StyleSheet, Text , View , Image, useColorScheme} from "react-native";
 import { Colors } from "../constants/Colors";
 
-const ThemedCard = ({styleProp, ...props}) => {
+const ThemedCard = ({style, ...props}) => {
     const colorScheme = useColorScheme();
     const theme = Colors[colorScheme] ?? Colors.light;
     return(
         <View style= {[{
-            backgroundColor : theme.uiBackground}, styles.card , styleProp]}
+            backgroundColor : theme.uiBackground}, styles.card , style]}
             {...props}
             />
 
