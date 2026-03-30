@@ -1,14 +1,21 @@
-import { StyleSheet, Text , View , Image, useColorScheme} from "react-native";
+import { StyleSheet, Text} from "react-native";
 import { Link } from "expo-router";
 
 //themed components
 import ThemedView from "../../components/ThemedView";
 import Spacer from "../../components/Spacer";
 import ThemedText from "../../components/ThemedText";
+import ThemedButton from "../../components/ThemedButton";
 
 
 
 const login = () =>{
+
+    const handleSubmit = () =>{
+        console.log("login form submitted");
+    };
+
+
     return (
         <ThemedView style= {styles.container}>
 
@@ -17,11 +24,21 @@ const login = () =>{
                 Login to your Account
             </ThemedText>
 
+            <Spacer/>
+            <ThemedButton onPress={handleSubmit}> 
+                    <Text style={{color: "#f2f2f2"}}>Login</Text>
+            </ThemedButton>
+
             <Spacer height={100}/>
             <Link href="/register">
                 <ThemedText title={true} style={{textAlign : "center"}}>
                     Register instead
                 </ThemedText>
+            </Link>
+
+            <Spacer/>
+            <Link style={styles.link} href="/">
+                <ThemedText>HomePage</ThemedText>
             </Link>
             
         </ThemedView>
@@ -39,13 +56,5 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
     },
-    card:{
-        padding: 20,
-        margin: 10,
-        borderRadius: 10,
-    },
-    link :{
-        fontSize: 18,
-        fontWeight: 'bold',
-    },
+    
 });
