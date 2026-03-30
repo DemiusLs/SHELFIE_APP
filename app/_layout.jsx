@@ -9,28 +9,17 @@ const RootLayout = () => {
 
   return (
     <>
-    <StatusBar value= "auto"></StatusBar>
+    <StatusBar style= "auto" />
     <Stack screenOptions= {{ 
         headerStyle : {ImageBackgroundColor : theme.navBackground},
         headerTintColor : theme.title,
-      }}>  
+      }}>
+        <Stack.Screen name="(auth)" options={{headerShown: false}}/>
         <Stack.Screen name="index" options={{title : "Home"}}/>
-        <Stack.Screen name="about" options={{title : "About"}}/>
-        <Stack.Screen name="contact" options={{title : "Contact" }}/>
       </Stack> 
     </>
-        
 
-
-   
-
-    
   );
 };
 
 export default RootLayout;
-
-const styles = StyleSheet.create({
-    
-   
-});

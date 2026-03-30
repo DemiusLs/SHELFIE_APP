@@ -1,7 +1,6 @@
 import { StyleSheet, Text , View , Image, useColorScheme} from "react-native";
-import Logo from '../assets/img/logo_light.png';
 import { Link } from "expo-router";
-import { Colors } from "../constants/Colors";
+
 //themed components
 import ThemedView from "../components/ThemedView";
 import ThemedLogo from "../components/ThemedLogo";
@@ -21,16 +20,15 @@ const Home = () => {
       <ThemedText >Reading List App</ThemedText>
       <Spacer />
 
-      <Link style={styles.link} href="/about">
-        <ThemedText>About Page</ThemedText>
+      <Link style={styles.link} href="/login">
+        <ThemedText>Login Page</ThemedText>
       </Link>
-      <Link style={styles.link} href="/contact">
-        <ThemedText>Contact Page</ThemedText>
+      <Link style={styles.link} href="/register">
+        <ThemedText>Register Page</ThemedText>
       </Link>
 
     </ThemedView>
 
-    
   );
 };
 
