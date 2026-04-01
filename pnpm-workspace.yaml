@@ -1,0 +1,8 @@
+packages:
+  - '.' # Dice che il progetto attuale è il pacchetto principale
+
+allowBuilds:
+  esbuild: true
+minimumReleaseAge: 1440
+#trustPolicy: no-downgrade
+blockExoticSubdeps: true

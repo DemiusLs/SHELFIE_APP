@@ -1,11 +1,13 @@
 import { StyleSheet, Text , View , Image, useColorScheme} from "react-native";
 import { Link } from "expo-router";
 
+
 //themed components
 import ThemedView from "../components/ThemedView";
 import ThemedLogo from "../components/ThemedLogo";
 import Spacer from "../components/Spacer";
 import ThemedText from "../components/ThemedText";
+
 
 const Home = () => {
   

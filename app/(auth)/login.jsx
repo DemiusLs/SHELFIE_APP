@@ -1,18 +1,23 @@
 import { StyleSheet, Text} from "react-native";
 import { Link } from "expo-router";
+import { useState } from 'react';
 
 //themed components
 import ThemedView from "../../components/ThemedView";
 import Spacer from "../../components/Spacer";
 import ThemedText from "../../components/ThemedText";
 import ThemedButton from "../../components/ThemedButton";
+import ThemedTextInput from "../../components/ThemedTextInput";
 
 
 
 const login = () =>{
 
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     const handleSubmit = () =>{
-        console.log("login form submitted");
+        console.log("login form submitted", email , password);
     };
 
 
@@ -23,6 +28,23 @@ const login = () =>{
             <ThemedText title={true} style={styles.title}>
                 Login to your Account
             </ThemedText>
+
+            <ThemedTextInput 
+                style={{width : "80%" , marginBottom : 20,}}
+                placeholder="Email"
+                keyboardType="email-address"
+                onChangeText={setEmail}
+                value={email}
+                />
+
+            <ThemedTextInput 
+                style={{width : "80%" , marginBottom : 20,}}
+                placeholder="Password"
+                onChangeText={setPassword}
+                value={password}
+                secureTextEntry
+                />
+                
 
             <Spacer/>
             <ThemedButton onPress={handleSubmit}> 
